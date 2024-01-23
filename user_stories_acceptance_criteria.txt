@@ -1,0 +1,71 @@
+USER STORIES
+
+AS A standard user
+I WANT to view sandwich presets and other products
+SO THAT I can order a meal
+
+AS AN admin user
+I WANT to update the store products
+SO THAT users can choose their meals with up-to-date menu information
+
+ACCEPTANCE CRITERIA
+GIVEN a full-stack sandwich ordering website
+WHEN I visit the website
+THEN I am presented with a login page
+WHEN I sign up with new account information
+THEN a standard user account is created with the account information and I am logged in
+WHEN I log in with a standard user account
+THEN I am taken to the homepage, which has a navigation bar with options Home, Menu, Order, Account, Logout
+WHEN I click on the Menu option in the navigation bar
+THEN I am taken to the Menu page, which includes a list of preset sandwich options and other menu items
+WHEN I click on a sandwich
+THEN I am shown a description of the sandwich, a list of ingredients and an Add to Order button
+WHEN I click on another menu item
+THEN I am shown a description of the item and an Add to Order button
+WHEN I click Add to Order
+THEN the item is added to my order (temp storage?)
+WHEN I click on the Order option in the navigation bar
+THEN I am shown the items in my order as well as a Checkout button
+WHEN I click on Checkout
+THEN I am prompted to enter "payment information"
+WHEN I confirm checkout
+THEN the order is posted to the database and I am taken to a confirmation screen
+WHEN I click on the Account option in the navigation bar
+THEN I am shown my account information
+WHEN I click on Logout
+THEN I am presented with a confirmation modal to confirm that I am logging out
+WHEN I confirm that I want to logout
+THEN I am logged out of my account
+
+WHEN I log in with an admin user account
+THEN I am taken to an admin dashboard, which has options Menu, Orders, Accounts
+WHEN I click on the Menu option
+THEN I am taken to the Menu page, which has a Create Menu Item button
+WHEN I click on an item
+THEN I am given the option to update the item details, list it as Out of Stock or remove it entirely
+WHEN I click on the Orders option
+THEN I can view all of the open orders
+WHEN I click on an order
+THEN I am given the option to update it to fulfilled or remove it
+WHEN I click on the Accounts option
+THEN I am shown all user accounts, which has a Create Account button
+WHEN I click on an account
+THEN I am given the option to update attributes or delete it
+WHEN I choose to create a new menu item or account
+THEN I am taken to a screen where I can enter information for the new item or account
+WHEN I confirm the information for the new entry
+THEN the new entry is posted to the database
+WHEN I confirm an update to a database item
+THEN the database is updated with the new information
+WHEN I confirm to delete a database item
+THEN the item is deleted from the database
+WHEN I click on Logout
+THEN I am presented with a confirmation modal to confirm that I am logging out
+WHEN I confirm that I want to logout
+THEN I am logged out of my account
+
+PRIORITIES:
+- standard user functions (create order, checkout)
+- admin user functions (update/delete items, create new items)
+- edit account information
+- custom sandwich
