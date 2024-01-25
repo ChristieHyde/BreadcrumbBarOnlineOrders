@@ -11,6 +11,10 @@ Ingredient.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    item_name: {
+      type: DataType.STRING,
+      allowNull: false,
+    },
     inStock: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

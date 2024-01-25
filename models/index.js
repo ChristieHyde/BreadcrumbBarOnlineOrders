@@ -2,7 +2,7 @@ const Account = require('./Account');
 const Order = require('./Order');
 const Sandwich = require('./Sandwich');
 const Ingredient = require('./Ingredient');
-const Item = require('./Item');
+const SideItem = require('./SideItem');
 const CreditCard = require('./CreditCard');
 const SandwichOrder = require('./SandwichOrder');
 const SandwichIngredient = require('./SandwichIngredient');
@@ -55,15 +55,15 @@ Ingredient.belongsToMany(Sandwich, {
 });
 
 // Many orders can contain many non-sandwich items
-Order.hasMany(Item, {
+Order.hasMany(SideItem, {
     through: {
-        model: Item,
+        model: SideItem,
         unique: false,
     },
-    as: 'items'
+    as: 'side_items'
 });
 
-Item.belongsToMany(Order, {
+SideItem.belongsToMany(Order, {
     through: {
         model: ItemOrder,
         unique: false
@@ -89,7 +89,7 @@ module.exports = {
   Order,
   Sandwich,
   Ingredient,
-  Item,
+  SideItem,
   CreditCard,
   SandwichOrder,
   SandwichIngredient,

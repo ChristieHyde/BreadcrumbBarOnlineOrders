@@ -2,15 +2,22 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Item class for non-sandwich menu items (drinks, snacks, etc)
-class Item extends Model {}
+class SideItem extends Model {}
 
-Item.init(
+SideItem.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    item_name: {
+      type: DataType.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataType.STRING,
     },
     price: {
       type: DataTypes.DECIMAL(10, 2),
@@ -26,8 +33,8 @@ Item.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Item',
+    modelName: 'side_item',
   }
 );
 
-module.exports = Item;
+module.exports = SideItem;

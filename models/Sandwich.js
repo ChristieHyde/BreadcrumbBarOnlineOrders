@@ -11,6 +11,13 @@ Sandwich.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    item_name: {
+      type: DataType.STRING,
+      allowNull: false,
+      },
+    description: {
+      type: DataType.STRING,
+      },
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,

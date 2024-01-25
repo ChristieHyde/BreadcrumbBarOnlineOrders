@@ -16,10 +16,6 @@ CreditCard.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    cardName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     cardNumber: {
       type: DataTypes.STRING,
       allowNull: false,
