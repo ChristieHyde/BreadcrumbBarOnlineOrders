@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+// Item class for non-sandwich menu items (drinks, snacks, etc)
+class SideItem extends Model {}
 
-Project.init(
+SideItem.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,37 +12,29 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
+    item_name: {
+      type: DataType.STRING,
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataType.STRING,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+    inStock: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'side_item',
   }
 );
 
-module.exports = Project;
+module.exports = SideItem;
