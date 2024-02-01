@@ -22,7 +22,7 @@ ItemOrder.init(
     item_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'item',
+          model: 'side_item',
           key: 'id',
           unique: false
         }
