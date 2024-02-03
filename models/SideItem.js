@@ -13,17 +13,17 @@ SideItem.init(
       autoIncrement: true,
     },
     item_name: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
     },
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    inStock: {
+    in_stock: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     }

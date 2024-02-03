@@ -16,15 +16,15 @@ CreditCard.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    cardNumber: {
+    card_number: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    expiryDate: {
+    expiry_date: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    cvcNumber: {
+    cvc_number: {
       type: DataTypes.STRING,
       allowNull: false,
     }
@@ -35,16 +35,16 @@ CreditCard.init(
     /*hooks: {
       beforeCreate: async (newCardData) => {
         newCardData.cardName = await bcrypt.hash(newCardData.cardName, 10);
-        newCardData.cardNumber = await bcrypt.hash(newCardData.cardNumber, 10);
-        newCardData.expiryDate = await bcrypt.hash(newCardData.expiryDate, 10);
-        newCardData.cvcNumber = await bcrypt.hash(newCardData.cvcNumber, 10);
+        newCardData.card_number = await bcrypt.hash(newCardData.card_number, 10);
+        newCardData.expiry_date = await bcrypt.hash(newCardData.expiry_date, 10);
+        newCardData.cvc_number = await bcrypt.hash(newCardData.cvc_number, 10);
         return newCardData;
       },
       beforeUpdate: async (updatedCardData) => {
         updatedCardData.cardName = await bcrypt.hash(updatedCardData.cardName, 10);
-        updatedCardData.cardNumber = await bcrypt.hash(updatedCardData.cardNumber, 10);
-        updatedCardData.expiryDate = await bcrypt.hash(updatedCardData.expiryDate, 10);
-        updatedCardData.cvcNumber = await bcrypt.hash(updatedCardData.cvcNumber, 10);
+        updatedCardData.card_number = await bcrypt.hash(updatedCardData.card_number, 10);
+        updatedCardData.expiry_date = await bcrypt.hash(updatedCardData.expiry_date, 10);
+        updatedCardData.cvc_number = await bcrypt.hash(updatedCardData.cvc_number, 10);
         return updatedCardData;
       },
     },*/

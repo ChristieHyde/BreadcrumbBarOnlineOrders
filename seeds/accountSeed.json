@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Admin1",
+        "email": "admin@breadcrumbbar.com",
+        "password": "breadcrumb",
+        "isAdmin": true
+    },
+    {
+        "username": "OtherAdmin",
+        "email": "inquiries@breadcrumbbar.com",
+        "password": "breadcrumb",
+        "isAdmin": true
+    },
+    {
+        "username": "User1",
+        "email": "user123@gmail.com",
+        "password": "testpassword123",
+        "isAdmin": false
+    },
+    {
+        "username": "User2",
+        "email": "user456@gmail.com",
+        "password": "testpassword456",
+        "isAdmin": false
+    },
+    {
+        "username": "User3",
+        "email": "user789@gmail.com",
+        "password": "testpassword789",
+        "isAdmin": false
+    }
+]

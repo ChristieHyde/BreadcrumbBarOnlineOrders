@@ -1,0 +1,17 @@
+[
+    {
+        "card_number": "1231231231231231",
+        "expiry_date": "1226",
+        "cvc_number": "123"
+    },
+    {
+        "card_number": "4564564564564564",
+        "expiry_date": "0425",
+        "cvc_number": "456"
+    },
+    {
+        "card_number": "7897897897897897",
+        "expiry_date": "0926",
+        "cvc_number": "789"
+    }
+]

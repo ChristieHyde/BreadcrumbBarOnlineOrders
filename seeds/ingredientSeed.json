@@ -1,0 +1,38 @@
+[
+    {
+        "item_name": "bread",
+        "in_stock": true
+    },
+    {
+        "item_name": "butter",
+        "in_stock": true
+    },
+    {
+        "item_name": "margarine",
+        "in_stock": true
+    },
+    {
+        "item_name": "lettuce",
+        "in_stock": true
+    },
+    {
+        "item_name": "tomato",
+        "in_stock": true
+    },
+    {
+        "item_name": "bacon",
+        "in_stock": true
+    },
+    {
+        "item_name": "chicken",
+        "in_stock": true
+    },
+    {
+        "item_name": "egg",
+        "in_stock": true
+    },
+    {
+        "item_name": "cucumber",
+        "in_stock": true
+    }
+]

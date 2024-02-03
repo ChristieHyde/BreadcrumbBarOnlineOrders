@@ -12,10 +12,10 @@ Ingredient.init(
       autoIncrement: true,
     },
     item_name: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    inStock: {
+    in_stock: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     }
