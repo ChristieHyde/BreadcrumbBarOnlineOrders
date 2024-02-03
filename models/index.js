@@ -12,7 +12,7 @@ const ItemOrder = require('./ItemOrder');
 
 // One account can place many orders
 Account.hasMany(Order, {
-    foreignKey: 'id',
+    foreignKey: 'account_id',
     onDelete: 'CASCADE',
 });
 
@@ -21,7 +21,7 @@ Order.belongsTo(Account, {
 });
 
 // Many orders can contain many sandwiches
-Order.hasMany(Sandwich, {
+Order.belongsToMany(Sandwich, {
     through: {
         model: SandwichOrder,
         unique: false,
@@ -38,7 +38,7 @@ Sandwich.belongsToMany(Order, {
 });
 
 // Many sandwiches can contain many ingredients
-Sandwich.hasMany(Ingredient, {
+Sandwich.belongsToMany(Ingredient, {
     through: {
         model: SandwichIngredient,
         unique: false,
@@ -55,7 +55,7 @@ Ingredient.belongsToMany(Sandwich, {
 });
 
 // Many orders can contain many non-sandwich items
-Order.hasMany(SideItem, {
+Order.belongsToMany(SideItem, {
     through: {
         model: SideItem,
         unique: false,
@@ -72,13 +72,13 @@ SideItem.belongsToMany(Order, {
 });
 
 // One order is paid with one credit card
-Order.has(CreditCard, {
+Order.hasOne(CreditCard, {
     foreignKey: 'card_id',
     onDelete: 'CASCADE',
 });
 
 CreditCard.belongsTo(Order, {
-    foreignKey: id,
+    foreignKey: 'order_id',
     onDelete: 'CASCADE',
 });
 

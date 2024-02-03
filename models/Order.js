@@ -15,10 +15,10 @@ Order.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    user_id: {
+    account_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'account',
         key: 'id',
       },
     },
