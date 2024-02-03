@@ -8,9 +8,9 @@ if (process.env.JAWSDB_URL) {
 } else {
   console.log(`1 ${process.env.DB_NAME}`);
   sequelize = new Sequelize(
-    process.env.DB_NAME || 'breadcrumb_db',
-    process.env.DB_USER || 'root',
-    process.env.DB_PASSWORD || 'p455w0rd1cu5',
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
     {
       host: 'localhost',
       dialect: 'mysql',
