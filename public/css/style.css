@@ -68,3 +68,22 @@ h2 {
     border: 2px solid black;
     background-color: rgba(255, 115, 0, 0.801);
 }
+
+.checkout {
+    text-align: center;
+    border: 2px solid black;
+    background-color: orangered;
+}
+
+.price h4 {
+    margin-left: 20%;
+}
+
+.price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid black;
+    padding-top: 5px;
+}
