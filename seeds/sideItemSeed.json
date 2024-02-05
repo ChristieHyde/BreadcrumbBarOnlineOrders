@@ -1,0 +1,32 @@
+[
+    {
+        "item_name": "Bottled Water",
+        "description": "A bottle of crystal clear water",
+        "price": 1.50,
+        "in_stock": true
+    },
+    {
+        "item_name": "Legally Distinct Fizzy Drink",
+        "description": "All we know is that it fizzes",
+        "price": 2.00,
+        "in_stock": true
+    },
+    {
+        "item_name": "Legally Distinct Energy Drink",
+        "description": "It's only mostly caffeinated",
+        "price": 2.00,
+        "in_stock": true
+    },
+    {
+        "item_name": "Chocolate Chip Cookie",
+        "description": "A sweet treat to wrap up the meal",
+        "price": 1.00,
+        "in_stock": true
+    },
+    {
+        "item_name": "Mystery Cookie",
+        "description": "Not even we know the ingredients of this one",
+        "price": 2.00,
+        "in_stock": false
+    }
+]

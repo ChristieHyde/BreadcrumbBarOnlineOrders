@@ -23,7 +23,7 @@ SideItem.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    inStock: {
+    in_stock: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     }

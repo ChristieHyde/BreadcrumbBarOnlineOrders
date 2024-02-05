@@ -1,0 +1,17 @@
+[
+    {
+        "total_price": 11.50,
+        "account_id": 2,
+        "card_id": 1
+    },
+    {
+        "total_price": 20.00,
+        "account_id": 3,
+        "card_id": 2
+    },
+    {
+        "total_price": 14.00,
+        "account_id": 4,
+        "card_id": 3
+    }
+]

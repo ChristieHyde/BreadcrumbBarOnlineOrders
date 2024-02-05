@@ -14,15 +14,16 @@ Sandwich.init(
     item_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      },
+    },
     description: {
       type: DataTypes.STRING,
-      },
+    },
+
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    inStock: {
+    in_stock: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     }

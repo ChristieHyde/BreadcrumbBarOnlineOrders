@@ -11,7 +11,7 @@ Order.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    totalPrice: {
+    total_price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
@@ -38,5 +38,7 @@ Order.init(
     modelName: 'order',
   }
 );
+
+// TO DO: calculate total price based on sandwiches and side items ordered
 
 module.exports = Order;

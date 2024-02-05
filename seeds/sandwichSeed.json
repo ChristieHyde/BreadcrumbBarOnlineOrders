@@ -1,0 +1,32 @@
+[
+    {
+        "item_name": "BLT Sandwich",
+        "description": "A standard sandwich",
+        "price": 8.00,
+        "in_stock": true
+    },
+    {
+        "item_name": "Chicken Supreme Sandwich",
+        "description": "A salad sandwich featuring chicken strips",
+        "price": 12.00,
+        "in_stock": true
+    },
+    {
+        "item_name": "Egg and Lettuce Sandwich",
+        "description": "Scrambled egg atop stripped lettuce",
+        "price": 10.00,
+        "in_stock": true
+    },
+    {
+        "item_name": "Veggie Salad Sandwich",
+        "description": "Suitable for vegans",
+        "price": 9.00,
+        "in_stock": true
+    }, 
+    {
+        "item_name": "Out of Stock Sandwich",
+        "description": "This sandwich is not available",
+        "price": 8.00,
+        "in_stock": false
+    }
+]

@@ -15,7 +15,7 @@ Ingredient.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    inStock: {
+    in_stock: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     }

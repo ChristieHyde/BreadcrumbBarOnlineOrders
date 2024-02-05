@@ -78,7 +78,7 @@ Order.hasOne(CreditCard, {
 });
 
 CreditCard.belongsTo(Order, {
-    foreignKey: 'order_id',
+    foreignKey: 'id',
     onDelete: 'CASCADE',
 });
 
