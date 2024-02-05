@@ -12,7 +12,7 @@ const ItemOrder = require('./ItemOrder');
 
 // One account can place many orders
 Account.hasMany(Order, {
-    foreignKey: 'id',
+    foreignKey: 'account_id',
     onDelete: 'CASCADE',
 });
 
