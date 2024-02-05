@@ -15,15 +15,13 @@
       <h1>Breadcrumb Bar</h1>
       <nav>
         {{#if logged_in}}
-        <a href="/profile">Profile</a> |
-        <a href="/checkout">Checkout</a> |
         <a href="/homepage">Homepage</a> |
-        <a href="/menu">Menu</a>
+        <a href="/checkout">Checkout</a> |
+        <a href="/profile">Profile</a>
         {{else}}
-        <a href="/profile">Profile</a> |
-        <a href="/checkout">Checkout</a> |
         <a href="/homepage">Homepage</a> |
-        <a href="/menu">Menu</a>
+        <a href="/checkout">Checkout</a> |
+        <a href="/profile">Profile</a>
         {{/if}}
       </nav>
     </header>
