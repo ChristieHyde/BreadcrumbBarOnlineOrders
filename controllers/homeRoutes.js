@@ -32,7 +32,7 @@ router.get('/profile', withAuth, async (req, res) =>{
     try {
         const accountData = await Account.findByPk(req.session.account_id, {
           attributes: { exclude: ['password'] },
-          include: [{ model: Project }],
+          include: [{ model: Order }],
         });
     
         const account = accountData.get({ plain: true });
