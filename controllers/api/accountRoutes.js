@@ -19,7 +19,6 @@ router.post('/login', async (req, res) => {
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       }
-      console.log(":(");
       const account = accountData.get({ plain: true });
       req.session.save(() => {
         req.session.account_id = account.id;
@@ -28,8 +27,6 @@ router.post('/login', async (req, res) => {
         
         res.json({ account: account, message: 'Login successful' });
       });
-      console.log(":/");
-      console.log(req.session.account_id);
   
     } catch (err) {
       res.status(400).json(err);

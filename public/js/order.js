@@ -36,12 +36,10 @@ const addSideItemToOrderHandler = async (event) => {
 
 const getOrder = async () => {
     // Create a new order (or use existing order)
-    console.log("01");
     const response = await fetch(`/api/orders/create`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     });
-    console.log("02");
     if (!response.ok) { alert(response.statusText); }
 }
 
