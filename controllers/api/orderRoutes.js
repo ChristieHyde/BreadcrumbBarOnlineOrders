@@ -4,26 +4,37 @@ const { Account, CreditCard, Ingredient, ItemOrder, Order, Sandwich, SandwichIng
 // create order
 router.post('/create', async (req, res) => {
     // Return an order if it exists
-    console.log(req.session);
+    console.log("03");
     if (req.session.order_id) {
-        console.log("1");
-        const orderData = await Order.findOne({ where: { id: req.session.order_id } })
-        res.status(208).json(orderData);
+        try {
+            console.log("04");
+            const orderData = await Order.findOne({ where: { id: req.session.order_id } })
+            const order = orderData.get({ plain: true });
+            res.status(208).json(order);
+        } catch (err) {
+            res.status(400).json(err);
+        }
         return;
     }
+    console.log("05");
     try {
-        console.log("2");
+        console.log("06");
+        console.log(req.session.account_id);
         const orderData = await Order.create({
-            account_id: req.session.user_id,
+            account_id: req.session.account_id,
             total_price: 0
         });
+        const order = orderData.get({ plain: true });
+        console.log(`order ${order.id}`);
+        req.session.order_id = order.id;
         req.session.save(() => {
-            req.session.order_id = orderData.id;
+            req.session.order_id = order.id;
         
-            res.status(200).json(orderData);
+            res.status(200).json(order);
         });
-        console.log("created");
+        console.log(`order id ${req.session.order_id}`);
     } catch (err) {
+        console.log("00000");
         res.status(400).json(err);
     }
 });
@@ -31,6 +42,7 @@ router.post('/create', async (req, res) => {
 // add to order
 router.post('/add/sandwich/:id', async (req, res) => {
     try {
+        console.log(`hello ${req.session.order_id}`);
         // attach to order
         const itemData = await SandwichOrder.create({
             order_id: req.session.order_id,
@@ -39,27 +51,28 @@ router.post('/add/sandwich/:id', async (req, res) => {
         // add to total price
         const order = await Order.findOne({ where: { id: req.session.order_id } });
         const sandwich = await Sandwich.findOne({ where: { id: req.params.id } });
-        console.log('3');
         const newTotal = parseFloat(order.total_price) + parseFloat(sandwich.price);
-        console.log(newTotal);
         await order.update({total_price: newTotal});
-        console.log('7');
     } catch (err) {
+        console.log("11111");
         res.status(400).json(err);
     }
 });
 
 router.post('/add/sideitem/:id', async (req, res) => {
     try {
+        console.log(req.session.order_id);
+        // attach to order
         const itemData = await ItemOrder.create({
             order_id: req.session.order_id,
-            item_id: req.params.id
+            side_item_id: req.params.id
         });
         // add to total price
         const order = await Order.findOne({ where: { id: req.session.order_id } });
         const sideItem = await SideItem.findOne({ where: { id: req.params.id } });
-        order.total_price = order.total_price + sideItem.price;
-        await order.save();
+        const newTotal = parseFloat(order.total_price) + parseFloat(sideItem.price);
+        await order.update({total_price: newTotal});
+
     } catch (err) {
         res.status(400).json(err);
     }
