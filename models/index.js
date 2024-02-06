@@ -57,7 +57,7 @@ Ingredient.belongsToMany(Sandwich, {
 // Many orders can contain many non-sandwich items
 Order.belongsToMany(SideItem, {
     through: {
-        model: SideItem,
+        model: ItemOrder,
         unique: false,
     },
     as: 'side_items'

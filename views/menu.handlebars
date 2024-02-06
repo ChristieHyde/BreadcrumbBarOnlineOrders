@@ -6,13 +6,13 @@
     <div class="sandwiches">
         <h3>| Sandwiches |</h3>
         {{#each sandwiches as |sandwich|}}
-        <button id="btn_{{sandwich.id}}">-{{sandwich.item_name}}
+        <button id="btn_sand_{{sandwich.id}}">-{{sandwich.item_name}}
         {{/each}}
     </div>
     <div class="sideItems">
         <h3>| Side Orders |</h3>
         {{#each sideItems as |sideItem|}}
-        <button>-{{sideItem.item_name}}
+        <button id="btn_side_{{sideItem.id}}">-{{sideItem.item_name}}
         {{/each}}
     </div>
 </div>

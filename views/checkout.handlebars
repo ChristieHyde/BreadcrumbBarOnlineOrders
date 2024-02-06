@@ -8,16 +8,26 @@
     <div class="checkout">
         <h3>| Current Order |</h3>
         <div class="order">
-            <div>
-                <h4>{{order.id}}</h4>
-            </div>
-            <div class="price">
+                <div class="price">
                 {{!-- Price of order and button for purchace --}}
-                <label>Address: </label>
-                <input type="address" />
-                <h4>Price: {{order.total_price}}</h4>
+                    <label>Address: </label>
+                    <input type="address" />
+                    <h4>Price: {{total_price}}</h4>
+                </div>
+                <div class="sandwiches">
+                    <h3>| Sandwiches |</h3>
+                    {{#each sandwiches as |sandwich|}}
+                        <p>{{sandwich.item_name}}</p>
+                    {{/each}}
+                </div>
+                <div class="sideItems">
+                    <h3>| Side Orders |</h3>
+                    {{#each side_items as |side_item|}}
+                        <p>{{side_item.item_name}}</p>
+                    {{/each}}
+                </div>
                 <button>Purchase</button>
-            </div>
+
         </div>
     </div>
 </div>

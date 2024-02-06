@@ -3,23 +3,36 @@ const { Account, CreditCard, Ingredient, ItemOrder, Order, Sandwich, SandwichIng
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/profile');
+    if (!req.session.logged_in) {
+        res.render('login');
         return;
-      }
+    }
     
-      res.render('login');
+    res.redirect('/profile');
+})
+
+
+router.get('/login', async (req, res) => {
+    res.render('login');
 })
 
 router.get('/homepage', async (req, res) =>{
+    if (!req.session.logged_in) {
+        res.render('login');
+        return;
+    }
     res.render('homepage');
 });
 
 router.get('/profile', withAuth, async (req, res) =>{
+    if (!req.session.logged_in) {
+        res.render('login');
+        return;
+    }
     try {
         const accountData = await Account.findByPk(req.session.account_id, {
           attributes: { exclude: ['password'] },
-          include: [{ model: Project }],
+          include: [{ model: Order }],
         });
     
         const account = accountData.get({ plain: true });
@@ -34,6 +47,10 @@ router.get('/profile', withAuth, async (req, res) =>{
 });
 
 router.get('/menu', async (req, res) => {
+    if (!req.session.logged_in) {
+        res.render('login');
+        return;
+    }
     try {
         // Obtain and parse sandwiches and side items
         const sandwichData = await Sandwich.findAll({
@@ -70,7 +87,10 @@ router.get('/menu', async (req, res) => {
 });
 
 router.get('/checkout', async (req, res) =>{
-    console.log(":)");
+    if (!req.session.logged_in) {
+        res.render('login');
+        return;
+    }
     try {
         const orderData = await Order.findByPk(req.session.order_id || order_id, {
             include: [
@@ -88,9 +108,7 @@ router.get('/checkout', async (req, res) =>{
                 },
               ],
         });
-
         const order = orderData.get({ plain: true });
-        console.log(order.total_price);
         res.render('checkout', {
             ...order,
             logged_in: req.session.logged_in

@@ -19,7 +19,7 @@ ItemOrder.init(
           unique: false
         }
     },
-    item_id: {
+    side_item_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'side_item',
