@@ -61,18 +61,18 @@ THEN I am logged out of my account
 ```
 
 ## Installation
-npm i express
-npm i express-session
-npm i express-handlebars
-npm i connect-session-sequelize
-npm i dotenv
-npm i mysql2
-npm i sequelize
-npm run seed
+The site can be viewed at https://breadcrumb-bar-online-78eb7902420c.herokuapp.com/.
 
-## Images
-
+## Usage
+Upon loading the site, a user will be prompted to log in or sign up to the site.
+Once they are logged in, they will be taken to the homepage, where they will be able to view their account profile, go to the menu and checkout their order.
+Clicking on Menu at the homepage takes the user to the Menu page, where they can click on the items they want to add to their order.
+Clicking on Checkout in the navigation bar will allow the user to view their order with its total price.
+```md
+NOTE: Currently checking out the order is not implemented, to prevent financial data from being added to the demo.
+```
+Clicking on Profile in the navigation bar takes the user to their profile page, where they can see how many orders they have placed.
 
 ## Links
 Github: [Link text](https://github.com/ChristieHyde/BreadcrumbBarOnlineOrders)
-Site: [Link text]()
+Site: [Link text](https://breadcrumb-bar-online-78eb7902420c.herokuapp.com/)
